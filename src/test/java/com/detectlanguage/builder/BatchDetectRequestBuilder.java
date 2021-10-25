@@ -43,7 +43,7 @@ public class BatchDetectRequestBuilder implements RequestBuilder {
     }
 
     public List<List<Result>> getRequestLists(){
-            List<List<Result>> resultLists = new ArrayList<>()
+            List<List<Result>> resultLists = new ArrayList<>();
         return resultLists;
     }
 }
