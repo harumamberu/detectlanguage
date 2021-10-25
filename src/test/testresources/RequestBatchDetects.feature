@@ -1,4 +1,4 @@
-Feature: send request with java client
+Feature: recognize language with java client by Batch Detect method
 
   Background: Registered user
     Given User with API token

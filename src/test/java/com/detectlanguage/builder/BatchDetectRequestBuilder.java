@@ -30,20 +30,11 @@ public class BatchDetectRequestBuilder implements RequestBuilder {
         return languages;
     }
 
-    public String getLanguage(){
-        return languages.get(0);
-    }
-
     public List<String> getTexts() {
         return texts;
     }
 
-    public List<String> getTextsAsArray() {
-        return texts;
-    }
-
-
-    public List<Result> getResultList(){
+    public List<Result> getRequestList(){
         Result result = new Result.BuilderResult().
                 setLanguage(languages.get(0)).
                 build();

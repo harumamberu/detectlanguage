@@ -1,22 +1,15 @@
 package com.detectlanguage.steps;
 
 import com.detectlanguage.DetectLanguage;
-import com.detectlanguage.Result;
 import com.detectlanguage.User;
 import com.detectlanguage.builder.BatchDetectRequestBuilder;
-import com.detectlanguage.builder.DetectRequestBuilder;
-import com.detectlanguage.builder.RequestBuilder;
 import com.detectlanguage.errors.APIError;
 import io.cucumber.java.Before;
 import io.cucumber.java.ParameterType;
-import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class StepsDefinitionHeap extends BaseStep{
 
@@ -37,7 +30,6 @@ public class StepsDefinitionHeap extends BaseStep{
     @Before
     public void instanceData(){
         requestData = new BatchDetectRequestBuilder();
-        System.out.println("\n");
     }
 
     @Given("the {string} language")
@@ -89,12 +81,6 @@ public class StepsDefinitionHeap extends BaseStep{
         Assert.assertFalse(resultList.get(0).isReliable);
     }
 
-
-    @Then("the {string} response was received")
-    public void the_response_was_received(String string) {
-
-    }
-
     @Then("the confidence was received")
     public void theConfidenceWasReceived() {
         Assert.assertTrue(resultList.get(0).confidence > 0);
@@ -102,6 +88,11 @@ public class StepsDefinitionHeap extends BaseStep{
 
     @Then("the actual result equls expected")
     public void actual_result_equals_expected(){
-        Assert.assertTrue(resultList.equals(requestData.getResultList()));
+        Assert.assertTrue(resultList.equals(requestData.getRequestList()));
+    }
+
+    @Then("the {string} response was received")
+    public void the_response_was_received(String string) {
+
     }
 }
