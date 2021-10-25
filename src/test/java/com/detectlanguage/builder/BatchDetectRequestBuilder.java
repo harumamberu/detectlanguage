@@ -41,4 +41,9 @@ public class BatchDetectRequestBuilder implements RequestBuilder {
         resultList.add(result);
         return resultList;
     }
+
+    public List<List<Result>> getRequestLists(){
+            List<List<Result>> resultLists = new ArrayList<>()
+        return resultLists;
+    }
 }

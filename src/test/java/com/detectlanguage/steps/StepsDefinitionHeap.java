@@ -91,6 +91,11 @@ public class StepsDefinitionHeap extends BaseStep{
         Assert.assertTrue(resultList.equals(requestData.getRequestList()));
     }
 
+    @Then("the actual results of batch request equls expected")
+    public void actual_results_equals_expected(){
+        Assert.assertTrue(resultLists.equals(requestData.getRequestLists()));
+    }
+
     @Then("the {string} response was received")
     public void the_response_was_received(String string) {
 
